@@ -14,14 +14,14 @@ for label in labels:
     os.makedirs(img_path)
 
     #open camera 
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     print(f"Collecting images for {label}")
     time.sleep(3)
 
     for imgnum in range(number_of_images):
         ret,frame = cap.read()
         imagename=os.path.join(IMAGE_PATH,label,label+'.'+'{}.jpg'.format(str(uuid.uuid1())))
-        cv2.imwrite(imagename, frame)
+        cv2.imwrite('imagename', frame)
         cv2.imshow('frame', frame)
         time.sleep(2)
 
